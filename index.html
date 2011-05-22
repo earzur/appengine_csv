@@ -1,0 +1,22 @@
+<html>
+<body>
+<h1> Data received so far </h1>
+<table border="1">
+{% for row in rows %}
+  <tr>
+  {% for cell in row.cols %}
+    <td>{{ cell }}</td>
+  {% endfor %}
+  </tr>
+{% endfor %}
+</table>
+<br>
+
+<form name="csv_form" action="/" method="post">
+<table>
+<tr>  <div><input type="text" name="lines" length="60"></input></div>
+<tr>  <div><input type="submit" value="send"></input></div>
+</table>
+</form>
+</body>
+</html>
