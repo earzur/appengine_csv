@@ -5,5 +5,4 @@ api_version: 1
 
 handlers:
   - url: /.*
-    script: hello.py
-    
+    script: index.py
