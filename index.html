@@ -12,11 +12,13 @@
 </table>
 <br>
 
+<a href="/csv?sep={{sep}}">Download as a CSV file</a>
+
+<br/>
 <form name="csv_form" action="/" method="post">
-<table>
-<tr>  <div><input type="text" name="lines" length="60"></input></div>
-<tr>  <div><input type="submit" value="send"></input></div>
-</table>
+<div>lines:&nbsp;<textarea name="lines" length="60" rows="3"></textarea></div>
+<div>separator:&nbsp;<input type="text" size="1" name="sep" value="{{ sep }}"></input></div>
+<div><input type="submit" value="send"></input></div>
 </form>
 </body>
 </html>

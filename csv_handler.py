@@ -3,6 +3,7 @@ from google.appengine.ext import db
 from google.appengine.ext.webapp import template
 
 import os
+import cgi
 import logging
 
 import encoding
@@ -15,7 +16,7 @@ class CSVHandler(webapp.RequestHandler):
     logging.info('CSV requested. Found %d rows',rows.count())
     if rows.count() > 0:
       self.response.headers['Content-Type'] = "application/csv"
-      writer = encoding.UnicodeWriter(self.response.out,delimiter=",",quotechar='"')
+      writer = encoding.UnicodeWriter(self.response.out,delimiter=cgi.escape(self.request.get("sep").__str__()),quotechar='"')
       for row in rows:
         writer.writerow(row.cols)
     else:
