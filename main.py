@@ -17,6 +17,7 @@ class MainPage(webapp.RequestHandler):
   
     template_vars = {
       'rows': rows,
+      'rowcount': rows.count(),
       'sep': cgi.escape(self.request.get("sep")) or ','
     }
     path = os.path.join(os.path.dirname(__file__),"index.html")
@@ -35,6 +36,7 @@ class MainPage(webapp.RequestHandler):
 
     template_vars = {
       'rows': all_rows,
+      'rowcount': all_rows.count(),
       'sep': cgi.escape(sep)
     }
       

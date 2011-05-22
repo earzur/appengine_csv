@@ -1,5 +1,6 @@
 <html>
 <body>
+{% if rowcount %}
 <h1> Data received so far </h1>
 <table border="1">
 {% for row in rows %}
@@ -10,9 +11,11 @@
   </tr>
 {% endfor %}
 </table>
+{% endif %}
 <br>
 
-<a href="/csv?sep={{sep}}">Download as a CSV file</a>
+<div><a href="/csv?sep={{sep}}">Download as a CSV file</a></div>
+<div><a href="/">refresh</a></div>
 
 <br/>
 <form name="csv_form" action="/" method="post">
